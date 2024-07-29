@@ -62,6 +62,40 @@ int print_hexa(va_list types, char map_to[],  char buffer[], int flags, char fla
 /* function to print non printable characters */
 int print_non_printable(va_list types, char buffer[], int flags, int width, int precison, int size);
 
+/* functions to print memory address */
+int print_pointer(va_list types, char buffer[], int flags, int width, int precison, int size);
+
+/* functions that works for other specifiers */
+int get_flags(const char *format, int *i);
+int get_size(const char *format, int *i);
+int get_width(const char *format, int *i, va_list list);
+int get_precision(const char *format, int *i, va_list list);
+
+/* OTHERS */
+int is_printable(char);
+int append_hexa_code(char, char[], int);
+int is_digit(char);
+long int convert_size_number(long int num, int sze);
+long int convert_size_unsgnd(unsigned long int num, int size);
+
+/* function to print string in reverse */
+int print_reverse(va_list types, char buffer[], int flags, int width, int precision, int size);
+
+/* function to print a string in rot 13 */
+int print_rot13string(va_list types, char buffer[], int flags, int width, int precision, int size);
+
+/* width handler */
+
+
+
+
+
+
+
+
+
+
+
 
 
 #endif /* MAIN_H */
