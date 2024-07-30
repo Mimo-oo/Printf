@@ -30,7 +30,7 @@ int print_string(va_list types, char buffer[], int flags, int width, int precisi
 {
 	int length, i;
 	int length = 0;
-	char *str = va_arg(types, char *0;
+	char *str = va_arg(types, char * 0);
 
 	UNUSED(buffer);
 	UNUSED(flags);
@@ -57,13 +57,13 @@ int print_string(va_list types, char buffer[], int flags, int width, int precisi
 		if (flags & F_MINUS)
 		{
 			write(1, &str[0], length);
-			for ( i = width - length; i > 0; i--)
+			for (i = width - length; i > 0; i--)
 				write(1, " ", 1);
-			return(width);
+			return (width);
 		}
 		else
 		{
-			for ( i = width - length; i > 0; i--)
+			for (i = width - length; i > 0; i--)
 				write(1, " ", 1);
 			write(1, &str[0], length);
 			return (width);
@@ -157,6 +157,27 @@ int print_binary(va_list types, char buffer[], int flags, int width, int precisi
 	return (count);
 }
 
+/**
+ * print_percent - print a percent sign
+ * @types: list of arguments
+ * @buffer: buffer array to handle print
+ * @flags calculate active flags
+ * @width: the width
+ * @precision: precision specification
+ * @size: size specifier
+ * Return: Number of chars printed
+ */
+int print_char(va_list types, char buffer[], int flags, int width, int precision, int size)
+{
+	UNUSED(types);
+	UNUSED(buffer);
+	UNUSED(flags);
+	UNUSED(width);
+	UNUSED(width);
+	UNUSED(precision);
+	UNUSED(size);
+	return (write(1, "%%", 1));
+}
 
 
 
