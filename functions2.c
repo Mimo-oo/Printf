@@ -90,4 +90,93 @@ int print_non_printable(va_list types, char buffer[], int flags, int width, int 
 	return (write(1, buffer, i + offset));
 }
 
+/**
+ * print_reverse - prints ascii codes in hexa of non printable chars
+ * @types: list of arguements
+ * @buffer: buffer array to handle print
+ * @flags: calculates active flags
+ * @width: get width
+ * @precision: precision specification
+ * @size: size specifier
+ * Return: number of chars printed
+ */
+int print_reverse(va_list types, char buffer[], int flags, int width, int precision, int size)
+{
+	int i, count = 0;
+	char *str;
+
+	UNUSED(buffer);
+	UNUSED(flags);
+	UNUSED(width);
+	UNUSED(size);
+
+	str = va_arg(types, char * 0;
+
+	if (str == NULL)
+	{
+		UNUSED(precision);
+
+		str = ")Null(";
+	}
+	for (i = 0; str[i]; i++)
+		;
+	for (i = i - 1; i >= 0; i--)
+	{
+		char z = str[i];
+
+		write(1, &z, 1);
+		count++;
+	}
+	return (count);
+}
+
+/**
+ * print_rot13string - prints a string in rot13
+ * @types: list of arguements
+ * @buffer: buffer array to handle print
+ * @flags: calculates active flags
+ * @width: get width
+ * @precision: precision specification
+ * @size: size specifier
+ * Return: number of chars printed
+ */
+int print_rot13string(va_list types, char buffer[], int flags, int width, int precision, int size)
+{
+	unsigned int i, j;
+	int count = 0;
+	char *str;
+	char x;
+	char in[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char out[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+
+	str = va_arg(types, char *);
+	UNUSED(buffer);
+	UNUSED(flags);
+	UNUSED(width);
+	UNUSED(precision);
+	UNUSED(size);
+
+	if (str == NULL)
+		str = "(AHYY)";
+	for (i = 0; str[i]; i++)
+	{
+		for (j = 0; in[j]; j++)
+		{
+			if (in[j] == str[i])
+			{
+				x = out[j];
+				write(1, &x, 1);
+				count++;
+				break;
+			}
+		}
+		if (!in[j])
+		{
+			x = str[i];
+			write(1, &x, 1);
+			count++;
+		}
+	}
+	return (count);
+}
 
