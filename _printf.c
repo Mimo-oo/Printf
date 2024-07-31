@@ -3,7 +3,7 @@
 void print_buffer(char buffer[], int *buff_ind);
 
 /**
- * _print - Printf function
+ * _printf - Printf function
  * @format: this is the format type
  * Return: printed chars.
  */
@@ -59,7 +59,7 @@ int _printf(const char *format, ...)
 /**
  * print_buffer - prints the contents of the buffer if it exist
  * @buffer: array of chars
- * @buff_ind index at which to add next char, represents the lenght
+ * @buff_ind: index at which to add next char, represents the lenght
  */
 void print_buffer(char buffer[], int *buff_ind)
 {
