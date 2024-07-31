@@ -41,11 +41,28 @@ itn append_hexa_code(char ascii_code, char buffer[], int i)
  * @c: char to be evaluated
  * Return: 1 if c is a digit or 0 if its not a digit
  */
-int is_printable(char c)
+int is_digit(char c)
 {
-        if (c >= '0' && c < '9')
-                return (1);
+	if (c >= '0' && c < '9')
+		return (1);
 
-        return (0);
+	return (0);
+}
+
+/**
+ * convert_size_number - casts a number to the specified size
+ * @num: number to be casted
+ * @size: number indicating the type to be casted
+ * Return: casted value of num
+ */
+long int convert_size_number(long int num, int size)
+
+{
+	if (size == S_LONG)
+		return (num);
+	else if (size == S_SHORT)
+		return ((short)num);
+
+	return ((int)num);
 }
 
