@@ -4,7 +4,7 @@
  * print_char - print a char
  * @types: list of arguments
  * @buffer: buffer array to handle print
- * @flags calculate active flags
+ * @flags: calculate active flags
  * @width: the width
  * @precision: precision specification
  * @size: size specifier
@@ -20,7 +20,7 @@ int print_char(va_list types, char buffer[], int flags, int width, int precision
  * print_string - print a string
  * @types: list of arguments
  * @buffer: buffer array to handle print
- * @flags calculate active flags
+ * @flags: calculate active flags
  * @width: the width
  * @precision: precision specification
  * @size: size specifier
@@ -76,13 +76,13 @@ int print_string(va_list types, char buffer[], int flags, int width, int precisi
  * print_int - print int
  * @types: list of arguments
  * @buffer: buffer array to handle print
- * @flags calculate active flags
+ * @flags: calculate active flags
  * @width: the width
  * @precision: precision specification
  * @size: size specifier
  * Return: Number of int printed
  */
-int print_char(va_list types, char buffer[], int flags, int width, int precision, int size)
+int print_int(va_list types, char buffer[], int flags, int width, int precision, int size)
 {
 	int i = BUFF_SIZE - 2;
 	int is_negative = 0;
@@ -117,7 +117,7 @@ int print_char(va_list types, char buffer[], int flags, int width, int precision
  * print_binary - print an unsigned number
  * @types: list of arguments
  * @buffer: buffer array to handle print
- * @flags calculate active flags
+ * @flags: calculate active flags
  * @width: the width
  * @precision: precision specification
  * @size: size specifier
@@ -161,13 +161,13 @@ int print_binary(va_list types, char buffer[], int flags, int width, int precisi
  * print_percent - print a percent sign
  * @types: list of arguments
  * @buffer: buffer array to handle print
- * @flags calculate active flags
+ * @flags: calculate active flags
  * @width: the width
  * @precision: precision specification
  * @size: size specifier
  * Return: Number of chars printed
  */
-int print_char(va_list types, char buffer[], int flags, int width, int precision, int size)
+int print_percent(va_list types, char buffer[], int flags, int width, int precision, int size)
 {
 	UNUSED(types);
 	UNUSED(buffer);
