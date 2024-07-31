@@ -36,3 +36,16 @@ itn append_hexa_code(char ascii_code, char buffer[], int i)
 	return (3);
 }
 
+/**
+ * is_digit - verifies if a char is  a digit
+ * @c: char to be evaluated
+ * Return: 1 if c is a digit or 0 if its not a digit
+ */
+int is_printable(char c)
+{
+        if (c >= '0' && c < '9')
+                return (1);
+
+        return (0);
+}
+
