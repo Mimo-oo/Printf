@@ -34,7 +34,7 @@ int print_pointer(va_list types, char buffer[], int flags, int width, int precis
 	while (num_addrs > 0)
 	{
 		buffer[ind--] = map_to[num_addrs % 16];
-		num_addrs / = 16;
+		num_addrs /= 16;
 		length++;
 	}
 
@@ -48,7 +48,7 @@ int print_pointer(va_list types, char buffer[], int flags, int width, int precis
 	ind++;
 
 	return (write_pointer(buffer, ind, length, width, flags, padd, extra_c, padd_start));
-}
+};
 
 /**
  * print_non_printable - prints ascii codes in hexa of non printable chars
