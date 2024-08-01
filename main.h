@@ -3,7 +3,6 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <unistd.h>
-#include <stdlib.h>
 
 #define UNUSED(x) (void)(x)
 #define BUFF_SIZE 1024
@@ -47,8 +46,8 @@ int handle_print(const char *fmt, int *i, va_list list, char buffer[], int flags
 /* ALL FUNCTIONS */
 
 /* functions to print chars and strings */
-int print_char(va_list types, char buffer [], int flags, int width, int precision, int size);
-int print_string(va_list types, char buffer [], int width, int precision, int size);
+int print_char(va_list types, char buffer[], int flags, int width, int precision, int size);
+int print_string(va_list types, char buffer[], int width, int precision, int size);
 int print_percent(va_list types, char buffer[], int flags, int width, int precision, int size);
 
 /* fuctions to print numbers */
